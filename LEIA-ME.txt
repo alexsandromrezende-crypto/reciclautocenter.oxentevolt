@@ -1,0 +1,75 @@
+AUTOCIRCULAR SENAI — PAINEL DE GESTÃO INDUSTRIAL E CARRO CIRCULAR 3D
+Versão 2.0 — Simulador educacional para o ensino médio
+
+ARQUIVOS
+- index.html: aplicativo completo em um arquivo HTML (com CSS e JavaScript).
+- Manual_AutoCircular_SENAI.pdf: manual com instruções, exemplos dos cálculos e relatórios.
+
+COMO COMEÇAR
+1. Extraia o ZIP e abra index.html no Chrome, Edge ou outro navegador moderno.
+2. A primeira conta criada NESTE NAVEGADOR será o orientador/administrador.
+3. Em "Criar conta", informe nome ou apelido, usuário e senha (mínimo 6 caracteres).
+4. Opcionalmente, envie uma foto ou capture uma foto com a câmera.
+5. Abra "Monte um carro circular". Arraste para girar o carro 3D e use +/− para zoom.
+6. Escolha alternativas para os 8 componentes e finalize a montagem.
+7. Em "Relatórios", consulte o desempenho e exporte CSV ou imprima/salve em PDF.
+8. O orientador pode cadastrar lotes de logística reversa e visualizar todas as montagens.
+
+FOTO E CÂMERA
+- A foto é opcional. Arquivos JPG/PNG/WebP são reduzidos antes do armazenamento.
+- Para usar a câmera, utilize a versão HTTPS publicada na Vercel ou um ambiente localhost.
+- O navegador precisa conceder permissão à câmera. Caso contrário, utilize "Enviar foto".
+- A câmera é desligada após a captura ou cancelamento.
+
+INSTALAÇÃO NO GITHUB E VERCEL
+1. Crie um repositório no GitHub e envie index.html + Manual_AutoCircular_SENAI.pdf na raiz.
+2. Importe-o na Vercel. Framework: Other. Build Command: vazio.
+3. O aplicativo estará acessível via HTTPS; a câmera depende de permissão do navegador.
+
+DADOS E PRIVACIDADE
+- Login e senhas são locais; a senha é armazenada como hash PBKDF2-SHA256 com salt.
+- A autenticação local NÃO é adequada para dados institucionais sensíveis.
+- Contas, fotos, lotes e resultados ficam no navegador/dispositivo (localStorage).
+- A sessão de login fica na aba (sessionStorage). Para encerrar, clique em "Sair".
+- NÃO HÁ banco de dados, sincronização entre aparelhos nem recuperação de senha por e-mail.
+- Primeiro cadastro é orientador no navegador atual; os seguintes são participantes.
+- Participante vê suas próprias montagens; orientador vê dados do dispositivo.
+- Orientadores devem exportar arquivos CSV e relatórios periodicamente.
+- CSV de desempenho e backup JSON não contêm fotos nem hashes de senhas.
+- Se limpar dados do navegador, cadastros e resultados podem desaparecer.
+- Para alunos menores de idade, prefira apelidos e use fotos apenas com autorização.
+
+LIMITES DA SIMULAÇÃO
+- Custos, massas, pontuações, retornos e registros iniciais são fictícios.
+- O automóvel é um modelo 3D didático desenhado em Canvas, sem modelo CAD externo.
+- A massa e o custo do desafio abrangem somente 8 conjuntos, não o carro completo.
+- Logística reversa e desempenho dos participantes são dados separados.
+- Componentes circulares reais exigem testes, rastreabilidade e segurança.
+
+LEIA O MANUAL PDF PARA CONHECER TODOS OS CAMPOS E FÓRMULAS.
+
+NOVO NA VERSÃO 3.0 — ÓLEO LUBRIFICANTE USADO OU CONTAMINADO (OLUC)
+1. Entre com sua conta e abra "Óleo usado • ciclo circular".
+2. Acompanhe o caminho: geração -> segregação -> coleta autorizada -> rerrefino -> óleo básico -> novo lubrificante.
+3. O orientador pode registrar e editar lotes em litros (L), identificar origem, coletor, referência fictícia de certificado, MTR e rerrefinador, além dos custos e valores recuperados.
+4. A validação numérica impede: óleo básico > processado > coletado > gerado.
+5. Visitantes podem concluir a "Missão óleo", com três cenários de decisão e pontuação registrada em seus relatórios.
+6. O painel principal, o relatório PDF impresso e o backup JSON agora incluem indicadores de óleo. Há exportação CSV exclusiva para lotes e outro CSV da Missão óleo.
+7. Volume em litros não é somado às massas em quilogramas dos componentes automotivos.
+8. A área de óleo tem registros iniciais didáticos, com valores e documentos SIMULADOS. Eles podem ser removidos, editados ou restaurados pelo orientador.
+9. NÃO use óleo real, não realize manipulação ou rerrefino. A ferramenta é um simulador e não emite nem confere documentos oficiais.
+10. Consulte as páginas 14 a 17 do manual PDF (partes numeradas 13 a 16) para instruções, campos e exemplos de cálculo.
+
+EXEMPLO DE CÁLCULO DO ÓLEO:
+- 100 L gerados; 80 L coletados; 60 L processados no rerrefino; 42 L de óleo básico recuperados.
+- Taxa de coleta: 80/100 = 80%.
+- Processamento do coletado: 60/80 = 75%.
+- Rendimento declarado do rerrefino: 42/60 = 70%.
+- Retorno material: 42/100 = 42%.
+- Custo de coleta e tratamento R$ 320; valor recuperado R$ 450; saldo hipotético R$ 130.
+
+BASES TÉCNICAS PARA CONSULTA
+- CONAMA Resolução 362/2005 (alterada pela 450/2012)
+- ANP: https://www.gov.br/anp/pt-br/assuntos/distribuicao-e-revenda/lubrificantes/reaproveitamento-de-oleo-usado-ou-contaminado
+- Lista de agentes ANP: https://www.gov.br/anp/pt-br/assuntos/distribuicao-e-revenda/lubrificantes/relacao-de-agentes-autorizados
+- SINIR/MTR: https://www.sinir.gov.br/sistemas/mtr/
